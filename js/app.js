@@ -4,7 +4,7 @@ const URL = 'bbdd/productos.json'
 const productos = []
 
 const hosting = location.href
-if (hosting.includes("github.io")) {
+if (hosting.includes("hiroshitomi.github.io")) {
     cargarProductos(prendas)
 } else {
     obtenerDatos()

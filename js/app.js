@@ -3,12 +3,7 @@ const inputSearch = document.querySelector("input#inputSearch")
 const URL = 'bbdd/productos.json'
 const productos = []
 
-const hosting = location.href
-if (hosting.includes("https://hiroshitomi.github.io/TeteClothes/")) {
-    cargarProductos(prendas)
-} else {
-    obtenerDatos()
-}
+
 
 async function obtenerDatos() {
     try {
@@ -80,4 +75,11 @@ const toast = (text, bgcolor)=> {
         stopOnFocus: true,
         style: { background: bgcolor, fontSize: '20px'}
     }).showToast();
+}
+
+const hosting = location.href
+if (hosting.includes("github.io")) {
+    cargarProductos(prendas)
+} else {
+    obtenerDatos()
 }

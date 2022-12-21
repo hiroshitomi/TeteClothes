@@ -1,8 +1,8 @@
-const prendas = [{id: 1, imagen: "./resources/conjuntoNegro.JPG", nombre: "Negro", precio: 2000},
+const prendas = [{id: 1, imagen: "./resources/conjuntoNegro.jpg", nombre: "Negro", precio: 2000},
                 {id: 2, imagen: "./resources/ropaInterior.jpg", nombre: "Blanco", precio: 3000},
-                {id: 3, imagen: "./resources/camison.JPG", nombre: "Camison", precio: 5000},
-                {id: 4, imagen: "./resources/pijamaInvierno.JPG", nombre: "Pijama", precio: 7000},
-                {id: 5, imagen: "./resources/lunares.JPG", nombre: "Lunares", precio: 6000},
-                {id: 6, imagen: "./resources/liso.JPG", nombre: "Liso", precio: 4000},
-                {id: 7, imagen: "./resources/rayado.JPG", nombre: "Rayado", precio: 8000},
-                {id: 8, imagen: "./resources/estrellas.JPG", nombre: "Estrellas", precio: 9000}]
+                {id: 3, imagen: "./resources/camison.jpg", nombre: "Camison", precio: 5000},
+                {id: 4, imagen: "./resources/pijamaInvierno.jpg", nombre: "Pijama", precio: 7000},
+                {id: 5, imagen: "./resources/lunares.jpg", nombre: "Lunares", precio: 6000},
+                {id: 6, imagen: "./resources/liso.jpg", nombre: "Liso", precio: 4000},
+                {id: 7, imagen: "./resources/rayado.jpg", nombre: "Rayado", precio: 8000},
+                {id: 8, imagen: "./resources/estrellas.jpg", nombre: "Estrellas", precio: 9000}]

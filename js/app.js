@@ -15,8 +15,6 @@ async function obtenerDatos() {
     } catch (error) {
         console.error(error)
         cards.innerHTML = retornoCardError()
-    } finally {
-        productos.length > 0 && activarClickBotones()
     }
 }
 
@@ -78,6 +76,7 @@ const toast = (text, bgcolor)=> {
 const hosting = location.href
 if (hosting.includes("github.io")) {
     cargarProductos(prendas)
+    activarClickBotones()
 } else {
     obtenerDatos()
 }

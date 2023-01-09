@@ -3,7 +3,6 @@ const inputSearch = document.querySelector("input#inputSearch")
 const URL = 'bbdd/productos.json'
 const productos = []
 
-
 async function obtenerDatos() {
     try {
         const response = await fetch(URL)
@@ -16,6 +15,8 @@ async function obtenerDatos() {
     } catch (error) {
         console.error(error)
         cards.innerHTML = retornoCardError()
+    } finally {
+        productos.length > 0 && activarClickBotones()
     }
 }
 
@@ -40,8 +41,6 @@ const activarClickBotones = () => {
         })
     })
 }
-
-activarClickBotones()
 
 const filtrarProductos = () => {
     let resultado = prendas.filter(prenda => prenda.nombre.toUpperCase().includes(inputSearch.value.toUpperCase().trim()))

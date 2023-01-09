@@ -4,7 +4,6 @@ const URL = 'bbdd/productos.json'
 const productos = []
 
 
-
 async function obtenerDatos() {
     try {
         const response = await fetch(URL)

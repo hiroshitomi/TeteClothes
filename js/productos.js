@@ -1,8 +1,8 @@
-const prendas = [{id: 1, imagen: "./resources/conjuntoNegro.jpg", nombre: "Negro", precio: 2000},
-                {id: 2, imagen: "./resources/ropaInterior.jpg", nombre: "Blanco", precio: 3000},
-                {id: 3, imagen: "./resources/camison.jpg", nombre: "Camison", precio: 5000},
-                {id: 4, imagen: "./resources/pijamaInvierno.jpg", nombre: "Pijama", precio: 7000},
-                {id: 5, imagen: "./resources/lunares.jpg", nombre: "Lunares", precio: 6000},
-                {id: 6, imagen: "./resources/liso.jpg", nombre: "Liso", precio: 4000},
-                {id: 7, imagen: "./resources/rayado.jpg", nombre: "Rayado", precio: 8000},
-                {id: 8, imagen: "./resources/estrellas.jpg", nombre: "Estrellas", precio: 9000}]
+const prendas = [{id: 1, imagen: "./resources/conjuntoNegro.webp", nombre: "Negro", precio: 2000},
+                {id: 2, imagen: "./resources/ropaInterior.webp", nombre: "Blanco", precio: 3000},
+                {id: 3, imagen: "./resources/camison.webp", nombre: "Camison", precio: 5000},
+                {id: 4, imagen: "./resources/pijamaInvierno.webp", nombre: "Pijama", precio: 7000},
+                {id: 5, imagen: "./resources/lunares.webp", nombre: "Lunares", precio: 6000},
+                {id: 6, imagen: "./resources/liso.webp", nombre: "Liso", precio: 4000},
+                {id: 7, imagen: "./resources/rayado.webp", nombre: "Rayado", precio: 8000},
+                {id: 8, imagen: "./resources/estrellas.webp", nombre: "Estrellas", precio: 9000}]

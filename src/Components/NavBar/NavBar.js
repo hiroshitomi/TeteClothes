@@ -1,28 +1,43 @@
 import './style.css'
 import CartWidget from '../CartWidget/CartWidget'
+import { Link, NavLink } from 'react-router-dom'
 
 const NavBar = () => {
   return (
     <div className='navbar'>
-      <div><img className='logo' alt='logo' src='../images/logoTete.png'></img></div>
+      <div>
+        <Link to={'/'}>
+          <img className='logo' alt='TeteClothes' src='../images/logoTete.png'></img>
+        </Link> 
+      </div>
       <div>
         <ul className='categorias'>
           <li>
-            <a href="#">Productos</a>
+            <NavLink className={({isActive}) => (isActive ? 'active' : 'inactive')} to={'/'}>
+              Todos los productos
+            </NavLink>
           </li>
           <li>
-            <a href="#">Camisones</a>
+          <NavLink className={({isActive}) => (isActive ? 'active' : 'inactive')} to={'/category/camisones'}>
+            Camisones
+          </NavLink>
           </li>
           <li>
-            <a href="#">Pijamas</a>
+            <NavLink className={({isActive}) => (isActive ? 'active' : 'inactive')} to={'/category/pijamas'}>
+              Pijamas
+            </NavLink>
           </li>
           <li>
-            <a href="#">Ropa Interior</a>
+            <NavLink className={({isActive}) => (isActive ? 'active' : 'inactive')} to={'/category/ropaInterior'}>
+              Ropa Interior
+            </NavLink>
           </li>
         </ul>
       </div>
       <div>
-        <CartWidget/>
+        <Link to={'/cart'}>
+          <CartWidget/>
+        </Link>
       </div>
     </div>
   )

@@ -24,5 +24,13 @@
 
 a{
     text-decoration: none;
-    color: rgb(219, 192, 255);
+    color: #dbc0ff;
+}
+
+.active {
+    color: white;
+}
+
+.inactive {
+    color: #dbc0ff;
 }

@@ -12,6 +12,7 @@ const Footer = () => {
                 <img alt="teteclothes" src="/images/whatsapp.png" />
             </a>
         </div>
+        <span>© TeteClothes - 2023 - Todos los derechos reservados</span>
     </footer>
   )
 }

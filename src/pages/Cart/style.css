@@ -7,3 +7,18 @@
     padding-top: 2rem;
     background-color: #dbc0ff;
 }
+
+.form-cart {
+    display: flex;
+    flex-direction: column;
+    background-color: #8f3bfd62;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.form-cart input {
+    margin: 5px;
+    border: 1px solid #dbc0ff;
+    border-radius: 5px;
+}

@@ -12,7 +12,6 @@ import {
 import CartEmpty from "../../Components/CartEmpty/CartEmpty";
 import Table from "react-bootstrap/Table";
 import Button from "react-bootstrap/Button";
-import Form from "react-bootstrap/Form";
 import Swal from "sweetalert2";
 
 const Cart = () => {
@@ -24,8 +23,24 @@ const Cart = () => {
     email: "",
   });
 
-  const createOrder = (event) => {
-    event.preventDefault();
+  const comprar = () => {
+    Swal.fire({
+      title: '¿Confirma la compra?',
+      icon: 'question',
+      showCancelButton: true,
+      confirmButtonColor: '#15042d',
+      cancelButtonColor: '#b983ff',
+      confirmButtonText: 'Si',
+      cancelButtonText: 'Seguir comprando'
+  }).then((result) => {
+      if (result.isConfirmed) {
+          createOrder()
+        }
+  })
+  }
+
+  const createOrder = () => {
+    //event.preventDefault();
     const db = getFirestore();
     const querySnapshot = collection(db, "orders");
 
@@ -46,10 +61,15 @@ const Cart = () => {
       total: cart.reduce((acc, curr) => acc + curr.price * curr.quantity, 0),
     })
       .then((response) => {
-        alert(`Orden con el ID: ${response.id} ha sido creada.`);
+        Swal.fire({
+          title: `Su compra ha sido confirmada con el ID: ${response.id}`,
+          icon: 'success',
+          confirmButtonColor: '#15042d'
+      }).then(() =>{
         updateStocks(db);
-        navigate("/");
-        clear();
+        clear()
+        navigate("/")
+      }) 
       })
       .catch((error) => console.log(error));
   };
@@ -187,7 +207,7 @@ const Cart = () => {
               border: "1px solid #15042d",
               margin: "2px",
             }}
-            onClick={createOrder}
+            onClick={comprar}
           >
             Finalizar Compra
           </Button>

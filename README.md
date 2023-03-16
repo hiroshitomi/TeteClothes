@@ -1,3 +1,17 @@
+# Tete Clothes
+
+Es un e-commerce donde puedes comprar productos sobre un emprendimiento personal de Ropa interior y pijamas. 
+
+![](./teteclothes.gif)
+
+# Librerías utilizadas
+* react-bootstrap
+* react-toastify
+* sweetalert2
+* firebase
+* react-router-dom
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

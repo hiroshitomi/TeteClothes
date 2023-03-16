@@ -1,0 +1,9 @@
+.cart {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    padding-top: 2rem;
+    background-color: #dbc0ff;
+}

@@ -2,9 +2,11 @@ import './style.css'
 import CartWidget from '../CartWidget/CartWidget'
 import { Link, NavLink } from 'react-router-dom'
 
+
 const NavBar = () => {
+  
   return (
-    <div className='navbar'>
+    <div className='nav-bar'>
       <div>
         <Link to={'/'}>
           <img className='logo' alt='TeteClothes' src='../images/logoTete.png'></img>
@@ -28,7 +30,7 @@ const NavBar = () => {
             </NavLink>
           </li>
           <li>
-            <NavLink className={({isActive}) => (isActive ? 'active' : 'inactive')} to={'/category/ropaInterior'}>
+            <NavLink className={({isActive}) => (isActive ? 'active' : 'inactive')} to={'/category/ropa Interior'}>
               Ropa Interior
             </NavLink>
           </li>

@@ -1,10 +1,11 @@
-.navbar {
+.nav-bar {
     width: 100%;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     background-color: #15042d;
     justify-content: space-around;
+    align-items: center;
 }
 
 .categorias{
@@ -12,6 +13,7 @@
     flex-direction: row;
     flex-wrap: nowrap;
     list-style: none;
+    text-decoration: none;
 }
 
 .categorias li {
@@ -20,11 +22,6 @@
 
 .logo{
     width: 100px;
-}
-
-a{
-    text-decoration: none;
-    color: #dbc0ff;
 }
 
 .active {

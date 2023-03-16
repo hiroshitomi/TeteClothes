@@ -1,7 +1,11 @@
 .imgCart {
-    width: 20px;
+    width: 17px; 
 }
 
 div{
     color: white;
+}
+
+a {
+    text-decoration: none;
 }

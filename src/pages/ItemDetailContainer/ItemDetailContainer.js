@@ -1,25 +1,29 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import ItemDetail from "../../Components/ItemDetail/ItemDetail";
-import { products } from "../../data/products";
-
+import { getFirestore, doc, getDoc } from "firebase/firestore";
 
 const ItemDetailContainer = () => {
     const [detailProduct, setDetailProduct] = useState({})
     const { id } = useParams();
-    const getProduct = new Promise((res, rej) => {
-    setTimeout(() => {
-        const findProduct = products.find((product) => product.id == id);
-        res(findProduct);
-    }, 1000);
-    });
+
+    const getProduct = () => {
+        const db = getFirestore()
+        const querySnapshot = doc(db, 'products', id)
+
+        getDoc(querySnapshot)
+        .then((response) => {
+            setDetailProduct({
+                id: response.id, ...response.data()
+            })
+            
+        })
+        .catch((error) => console.log(error))
+    }
+
 
     useEffect(() => {
-        getProduct
-        .then((response) => {
-            setDetailProduct(response)
-        })
-        .catch((error) => console.log(error));
+        getProduct()
     }, []);
 
     return (

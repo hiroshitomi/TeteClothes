@@ -1,7 +1,9 @@
 .item {
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.378);
-    border-radius: 5px;
+    border-radius: 10px;
     padding: 10px;
-    margin: 10px;
+    margin: 5px;
     background-color: #15042d;
+    height: 35rem;
+    width: 14rem;
 }

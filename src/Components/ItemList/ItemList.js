@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import Item from "../Item/Item";
 import './style.css'
 

@@ -31,3 +31,7 @@
 .inactive {
     color: #dbc0ff;
 }
+
+a:hover {
+    color: white !important;
+  }

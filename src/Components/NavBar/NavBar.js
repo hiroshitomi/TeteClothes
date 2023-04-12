@@ -15,22 +15,22 @@ const NavBar = () => {
       <div>
         <ul className='categorias'>
           <li>
-            <NavLink className={({isActive}) => (isActive ? 'active' : 'inactive')} to={'/'}>
+            <NavLink style={{textDecoration: 'none'}} className={({isActive}) => (isActive ? 'active' : 'inactive')} to={'/'}>
               Todos los productos
             </NavLink>
           </li>
           <li>
-          <NavLink className={({isActive}) => (isActive ? 'active' : 'inactive')} to={'/category/camisones'}>
+          <NavLink style={{textDecoration: 'none'}} className={({isActive}) => (isActive ? 'active' : 'inactive')} to={'/category/camisones'}>
             Camisones
           </NavLink>
           </li>
           <li>
-            <NavLink className={({isActive}) => (isActive ? 'active' : 'inactive')} to={'/category/pijamas'}>
+            <NavLink style={{textDecoration: 'none'}} className={({isActive}) => (isActive ? 'active' : 'inactive')} to={'/category/pijamas'}>
               Pijamas
             </NavLink>
           </li>
           <li>
-            <NavLink className={({isActive}) => (isActive ? 'active' : 'inactive')} to={'/category/ropa Interior'}>
+            <NavLink style={{textDecoration: 'none'}} className={({isActive}) => (isActive ? 'active' : 'inactive')} to={'/category/ropa Interior'}>
               Ropa Interior
             </NavLink>
           </li>

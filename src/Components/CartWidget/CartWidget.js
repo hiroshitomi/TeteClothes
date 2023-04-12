@@ -16,7 +16,7 @@ const CartWidget = () => {
       <Link to={"/cart"}>
         <div style={{display: 'flex', flexDirection: 'row', color: '#dbc0ff', margin: '5px', alignItems: 'center'}}>
           <img className="imgCart" alt="carrito" src="/images/carrito.png" />
-          <p>{total}</p>
+          <p className="total">{total}</p>
         </div>
       </Link>
     </>

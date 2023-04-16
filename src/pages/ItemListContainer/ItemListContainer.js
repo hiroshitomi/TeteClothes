@@ -28,7 +28,6 @@ const ItemListContainer = () => {
           return { id: doc.id, ...doc.data() };
         });
         setProductList(list);
-        console.log(list);
       })
       .catch((error) => console.log(error));
   };

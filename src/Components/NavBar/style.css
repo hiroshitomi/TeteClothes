@@ -26,6 +26,11 @@
   background-color: #15042d;
 }
 
+.btn-close {
+  background: transparent url(/public/images/closeBtn.png) center/1em auto no-repeat !important;
+  opacity: 1;
+}
+
 .navbar-toggler-icon {
     background-image: url(/public/images/burgerNavBar.png) !important;
   }

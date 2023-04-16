@@ -8,7 +8,7 @@ const Item = ({ product }) => {
       <img
         alt={product.title}
         src={`/images/${product.image}`}
-        width="200px"
+        width="175px"
       />
       <h2>{product.title}</h2>
       <h3>

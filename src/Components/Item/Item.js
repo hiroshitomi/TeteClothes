@@ -15,7 +15,7 @@ const Item = ({ product }) => {
         <strong>$</strong>
         {product.price}
       </h3>
-      <p>{product.description}</p>
+      {/* <p>{product.description}</p> */}
       <Link to={`/item/${product.id}`}>
         <Button
           style={{

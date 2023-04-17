@@ -13,7 +13,7 @@
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: space-around;
-  align-items: center;
+  align-items: start;
 }
 
 .nav-bar-burger {

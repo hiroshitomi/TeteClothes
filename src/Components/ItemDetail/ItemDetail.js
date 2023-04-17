@@ -3,7 +3,8 @@ import { useNavigate } from "react-router-dom";
 import { CartContext } from "../../context/CartContext";
 import ItemCount from "../ItemCount/ItemCount";
 import { Button } from "react-bootstrap";
-import { ToastContainer, toast } from "react-toastify";
+//import { ToastContainer, toast } from "react-toastify";
+import toast, { Toaster } from "react-hot-toast";
 
 const ItemDetail = ({ detail }) => {
   const navigate = useNavigate();
@@ -12,15 +13,14 @@ const ItemDetail = ({ detail }) => {
 
   const addToCart = () => {
     addItem(detail, count);
-    toast(`${detail.title} agregado al carrito`, {
-      position: "top-right",
-      autoClose: 3000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: "dark",
+    toast.success(`${detail.title} agregado al carrito`, {
+      position: "bottom-right",
+      duration: 3000,
+      style: {
+        fontSize: "1rem",
+        backgroundColor: "#15042d",
+        color: "#dbc0ff"
+      },
     });
   };
 
@@ -84,7 +84,6 @@ const ItemDetail = ({ detail }) => {
               margin: "2px",
             }}
           >
-            {" "}
             Agregar al Carrito
           </Button>
           <Button
@@ -100,7 +99,7 @@ const ItemDetail = ({ detail }) => {
         </div>
       </div>
 
-      <ToastContainer />
+      <Toaster />
     </div>
   );
 };

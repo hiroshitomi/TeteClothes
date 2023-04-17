@@ -6,7 +6,7 @@ Es un e-commerce donde puedes comprar productos sobre un emprendimiento personal
 
 # Librerías utilizadas
 * react-bootstrap
-* react-toastify
+* react-hot-toast
 * sweetalert2
 * firebase
 * react-router-dom

@@ -13,10 +13,20 @@ import CartEmpty from "../../Components/CartEmpty/CartEmpty";
 import Table from "react-bootstrap/Table";
 import Button from "react-bootstrap/Button";
 import Swal from "sweetalert2";
+import Form from "react-bootstrap/Form";
+import Modal from "react-bootstrap/Modal";
 
 const Cart = () => {
   const { cart, clear, removeItem, total } = useContext(CartContext);
+
+  /* variables para mostrar/ocultar el modal de compra */
+  const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
   const navigate = useNavigate();
+
+  /* state para coompletar el formulario de compra */
   const [formValue, setFormValue] = useState({
     name: "",
     phone: "",
@@ -24,19 +34,8 @@ const Cart = () => {
   });
 
   const comprar = () => {
-    Swal.fire({
-      title: '¿Confirma la compra?',
-      icon: 'question',
-      showCancelButton: true,
-      confirmButtonColor: '#15042d',
-      cancelButtonColor: '#b983ff',
-      confirmButtonText: 'Si',
-      cancelButtonText: 'Seguir comprando'
-  }).then((result) => {
-      if (result.isConfirmed) {
-          createOrder()
-        }
-  })
+    handleClose()
+    createOrder()
   }
 
   const createOrder = () => {
@@ -63,13 +62,13 @@ const Cart = () => {
       .then((response) => {
         Swal.fire({
           title: `Su compra ha sido confirmada con el ID: ${response.id}`,
-          icon: 'success',
-          confirmButtonColor: '#15042d'
-      }).then(() =>{
-        updateStocks(db);
-        clear()
-        navigate("/")
-      }) 
+          icon: "success",
+          confirmButtonColor: "#15042d",
+        }).then(() => {
+          updateStocks(db);
+          clear();
+          navigate("/");
+        });
       })
       .catch((error) => console.log(error));
   };
@@ -91,129 +90,163 @@ const Cart = () => {
   const handleInput = (event) => {
     setFormValue({
       ...formValue,
-      [event.target.name]: event.target.value
+      [event.target.name]: event.target.value,
     });
   };
 
   return (
-    <div className="cart">
-      {cart?.length === 0 && <CartEmpty />}
-      {cart?.length > 0 && (
-        <Table striped bordered hover>
-          <thead>
-            <tr>
-              <th>Imagen</th>
-              <th>Nombre</th>
-              <th>Cantidad</th>
-              <th>Subtotal</th>
-              <th>Eliminar</th>
-            </tr>
-          </thead>
-          <tbody>
-            {cart?.map((product) => (
-              <tr key={product.title}>
-                <td>
-                  <img
-                    alt={product.title}
-                    src={`/images/${product.image}`}
-                    style={{ height: "50px", width: "50px" }}
-                  />
-                </td>
-                <td>
-                  <h2>{product.title}</h2>
-                </td>
-                <td>
-                  <h5>{product.quantity}</h5>
-                </td>
-                <td>
-                  <h5>${product.price * product.quantity}</h5>
-                </td>
-                <td>
-                  <Button
-                    style={{
-                      background: "#15042d",
-                      border: "1px solid #15042d",
-                      margin: "2px",
-                    }}
-                    onClick={() => removeItem(product.id)}
-                  >
-                    <img alt="eliminar" src="/images/eliminar.png" />
-                  </Button>
-                </td>
+    <div className="container">
+      <div className="cart">
+        {cart?.length === 0 && <CartEmpty />}
+        {cart?.length > 0 && (
+          <Table striped className="text-center">
+            <thead>
+              <tr>
+                <th>Imagen</th>
+                <th>Nombre</th>
+                <th>Cantidad</th>
+                <th>Subtotal</th>
+                <th>Eliminar</th>
               </tr>
-            ))}
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td>
-                <h2 style={{ color: "black" }}>Total:${total}</h2>
-              </td>
-            </tr>
-          </tbody>
-        </Table>
-      )}
-      {cart?.length > 0 && (
-        <div
-          style={{ display: "flex", flexDirection: "column", color: "black" }}
-        >
-          <Button
-            style={{
-              background: "#15042d",
-              border: "1px solid #15042d",
-              margin: "2px",
-            }}
-            onClick={clear}
+            </thead>
+            <tbody>
+              {cart?.map((product) => (
+                <tr key={product.title}>
+                  <td>
+                    <img
+                      alt={product.title}
+                      src={`/images/${product.image}`}
+                      style={{ height: "50px", width: "50px" }}
+                    />
+                  </td>
+                  <td>
+                    <h6>{product.title}</h6>
+                  </td>
+                  <td>
+                    <h6>{product.quantity}</h6>
+                  </td>
+                  <td>
+                    <h6>${product.price * product.quantity}</h6>
+                  </td>
+                  <td>
+                    <Button
+                      style={{
+                        background: "#15042d",
+                        border: "1px solid #15042d",
+                        margin: "2px",
+                      }}
+                      onClick={() => removeItem(product.id)}
+                    >
+                      <img alt="eliminar" src="/images/eliminar.png" />
+                    </Button>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </Table>
+        )}
+        {cart?.length > 0 && (
+          <div
+            style={{ display: "flex", flexDirection: "row", color: "black" }}
           >
-            Vaciar Carrito
-          </Button>
-          <Button
-            style={{
-              background: "#15042d",
-              border: "1px solid #15042d",
-              margin: "2px",
-            }}
-            onClick={() => navigate("/")}
-          >
-            Seguir comprando
-          </Button>
+            <h2 className="text-center">Total:${total}</h2>
+            <Button
+              style={{
+                background: "#15042d",
+                border: "1px solid #15042d",
+                margin: "2px",
+              }}
+              onClick={clear}
+            >
+              Vaciar Carrito
+            </Button>
+            <Button
+              style={{
+                background: "#15042d",
+                border: "1px solid #15042d",
+                margin: "2px",
+              }}
+              onClick={() => navigate("/")}
+            >
+              Seguir comprando
+            </Button>
 
-          <form className="form-cart">
-          <input
-            name="name"
-            type="text"
-            placeholder="Nombre"
-            value={formValue.name}
-            onChange={handleInput}
-          />
-          <input
-            name="phone"
-            type="text"
-            placeholder="Telefono"
-            value={formValue.phone}
-            onChange={handleInput}
-          />
-          <input
-            name="email"
-            type="email"
-            placeholder="Email"
-            value={formValue.email}
-            onChange={handleInput}
-          />
-          <Button
-            style={{
-              background: "#15042d",
-              border: "1px solid #15042d",
-              margin: "2px",
-            }}
-            onClick={comprar}
-          >
-            Finalizar Compra
-          </Button>
-        </form>
-        </div>
-      )}
+            <Button
+              style={{
+                background: "#15042d",
+                border: "1px solid #15042d",
+                margin: "2px",
+              }}
+              onClick={handleShow}
+            >
+              Finalizar Compra
+            </Button>
+
+            <Modal show={show} onHide={handleClose}>
+              <Modal.Header closeButton>
+                <Modal.Title>Finalizar Compra</Modal.Title>
+              </Modal.Header>
+              <Modal.Body>
+                <Form>
+                  <Form.Group
+                    className="mb-3"
+                    controlId="exampleForm.ControlInput1"
+                  >
+                    <Form.Label>Nombre</Form.Label>
+                    <Form.Control
+                      name="name"
+                      type="text"
+                      value={formValue.name}
+                      onChange={handleInput}
+                      placeholder="Nombre completo"
+                      autoFocus
+                    />
+                  </Form.Group>
+                  <Form.Group
+                    className="mb-3"
+                    controlId="exampleForm.ControlInput1"
+                  >
+                    <Form.Label>Telefono</Form.Label>
+                    <Form.Control
+                      name="phone"
+                      value={formValue.phone}
+                      onChange={handleInput}
+                      type="text"
+                      placeholder="Teléfono"
+                    />
+                  </Form.Group>
+                  <Form.Group
+                    className="mb-3"
+                    controlId="exampleForm.ControlInput1"
+                  >
+                    <Form.Label>Email</Form.Label>
+                    <Form.Control
+                      name="email"
+                      value={formValue.email}
+                      onChange={handleInput}
+                      type="text"
+                      placeholder="mail@ejemplo.com"
+                    />
+                  </Form.Group>
+                </Form>
+              </Modal.Body>
+              <Modal.Footer>
+                <Button
+                  style={{
+                    background: "#dbc0ff",
+                    border: "1px solid #dbc0ff",
+                    margin: "2px",
+                    color: "#15042d",
+                  }}
+                  onClick={comprar}
+                >
+                  Comprar
+                </Button>
+              </Modal.Footer>
+            </Modal>
+          </div>
+        )}
+      </div>
     </div>
   );
 };

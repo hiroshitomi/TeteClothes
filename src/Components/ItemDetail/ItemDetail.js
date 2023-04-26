@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom";
 import { CartContext } from "../../context/CartContext";
 import ItemCount from "../ItemCount/ItemCount";
 import { Button } from "react-bootstrap";
-//import { ToastContainer, toast } from "react-toastify";
 import toast, { Toaster } from "react-hot-toast";
 
 const ItemDetail = ({ detail }) => {
@@ -18,8 +17,8 @@ const ItemDetail = ({ detail }) => {
       duration: 3000,
       style: {
         fontSize: "1rem",
-        backgroundColor: "#15042d",
-        color: "#dbc0ff"
+        backgroundColor: "#dbc0ff",
+        color: "#15042d"
       },
     });
   };

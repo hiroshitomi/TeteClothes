@@ -12,6 +12,7 @@ a {
   flex-direction: column;
   min-height: 100vh;
   background-color: #dbc0ff;
+  overflow-x: hidden;
 }
 
 .content-wrap {

@@ -1,4 +1,5 @@
-import { useContext, useEffect, useState } from "react";
+import "./style.css";
+import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { CartContext } from "../../context/CartContext";
 import ItemCount from "../ItemCount/ItemCount";
@@ -24,41 +25,24 @@ const ItemDetail = ({ detail }) => {
   };
 
   return (
-    <div
-      style={{
-        display: "flex",
-        justifyContent: "center",
-        padding: "4px 16px 13px",
-        flexDirection: "row",
-        alignItems: "center",
-        color: "#15042d",
-        background: '#15042d19'
-      }}
-    >
+    <div className="container">
+      <div className="detail-container">
       <div>
         <img src={`/images/${detail.image}`} alt={detail.title} width="250px" />
       </div>
-
-      <div style={{
-        display: "flex",
-        justifyContent: "center",
-        padding: "4px 32px 140px",
-        flexDirection: "column",
-        alignItems: "flex-start",
-        color: "#15042d"
-      }}>
+      <div>
         <h2>{detail.title}</h2>
         <h3>${detail.price}</h3>
         <h4>{detail.description}</h4>
         <div
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            padding: "10px",
-            flexDirection: "row",
-            alignItems: "center",
-            color: "#15042d",
-          }}
+          // style={{
+          //   display: "flex",
+          //   justifyContent: "center",
+          //   padding: "10px",
+          //   flexDirection: "row",
+          //   alignItems: "center",
+          //   color: "#15042d",
+          // }}
         >
           <ItemCount count={count} setCount={setCount} />
           <h6 style={{paddingLeft: "10px"}}>Disponibles:{detail.stock}</h6>
@@ -97,6 +81,8 @@ const ItemDetail = ({ detail }) => {
           </Button>
         </div>
       </div>
+      </div>
+      
 
       <Toaster />
     </div>

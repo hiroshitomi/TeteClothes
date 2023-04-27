@@ -1,0 +1,16 @@
+.detail-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 4px 16px 13px;
+    align-items: center;
+    color: #15042d !important;
+    background-color: #15042d19;
+}
+
+@media (max-width: 576px) {
+    .detail-container {
+        display: flex;
+        flex-direction: column;
+    }
+}

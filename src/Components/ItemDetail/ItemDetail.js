@@ -1,13 +1,12 @@
 import "./style.css";
 import { useContext, useState } from "react";
-//import { useNavigate } from "react-router-dom";
 import { CartContext } from "../../context/CartContext";
 import ItemCount from "../ItemCount/ItemCount";
 import { Button } from "react-bootstrap";
 import toast, { Toaster } from "react-hot-toast";
 
 const ItemDetail = ({ detail }) => {
-  //const navigate = useNavigate();
+  
   const [count, setCount] = useState(detail?.stock === 0 ? 0 : 1);
   const { addItem } = useContext(CartContext);
 

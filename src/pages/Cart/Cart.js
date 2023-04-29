@@ -25,6 +25,7 @@ const Cart = () => {
   const handleShow = () => setShow(true);
 
   const navigate = useNavigate();
+   
 
   /* state para coompletar el formulario de compra */
   const [formValue, setFormValue] = useState({
@@ -117,6 +118,7 @@ const Cart = () => {
                       alt={product.title}
                       src={`/images/${product.image}`}
                       style={{ height: "50px", width: "50px" }}
+                      onClick={() => navigate(`/item/${product.id}`)}
                     />
                   </td>
                   <td>

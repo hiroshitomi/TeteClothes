@@ -8,9 +8,28 @@
     background-color: #15042d19;
 }
 
+.text-color-div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    color: #15042d !important;
+    padding-left: 10px;
+    text-align: left;
+}
+
+.stock-count {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    color: #15042d;
+}
+
 @media (max-width: 576px) {
     .detail-container {
         display: flex;
         flex-direction: column;
     }
+
+    
 }

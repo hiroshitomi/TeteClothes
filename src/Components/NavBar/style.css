@@ -44,6 +44,7 @@
     order: 0;
 }
 
+
 .offcanvas.show:not(.hiding), .offcanvas.showing {
   transform: none;
   background-color: #15042d;
@@ -85,8 +86,14 @@ a:hover {
 {
   .order-nav {
     order: -1;
+  }
+  .nav-bar{
+    display: none;
+  }
 }
-.nav-bar{
-  display: none;
-}
+
+@media (max-width: 576px) {
+  .offcanvas.offcanvas-start {
+    width: 50% !important;
+  }
 }

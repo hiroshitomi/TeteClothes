@@ -1,7 +1,7 @@
 import "./style.css";
-import { Button } from "react-bootstrap";
+import {Button} from "react-bootstrap";
 
-const ItemCount = ({ count, setCount }) => {
+const ItemCount = ({count, setCount}) => {
   const onAdd = () => {
     setCount(count + 1);
   };
@@ -19,27 +19,16 @@ const ItemCount = ({ count, setCount }) => {
         <Button
           disabled={count === 0}
           onClick={restar}
-          style={{
-            background: "#15042d",
-            border: "2px solid #15042d",
-            marginRight: "10px",
-          }}
+          style={{marginRight: "5px"}}
         >
           {" "}
           -{" "}
         </Button>
-        <div style={{color: "#15042d"}}>
-          <span>{count}</span>
-        </div>
+        <span>{count}</span>
         <Button
           disabled={count === 0}
           onClick={onAdd}
-          className="btn-primary"
-          style={{
-            background: "#15042d",
-            border: "1px solid #15042d",
-            marginLeft: "10px",
-          }}
+          style={{marginLeft: "5px"}}
         >
           {" "}
           +{" "}

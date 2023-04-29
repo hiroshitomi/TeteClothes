@@ -7,5 +7,25 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    color: #dbc0ff;
+    background-color: #15042d;
+    border-radius: 5px;
+    height: 42px;
 }
 
+.controllers Button {
+    background-color: #dbc0ff;
+    border: 3px solid #15042d;
+    border-radius: 3px;
+    color: #15042d;
+}
+
+@media (max-width: 576px) {
+    .controllers Button {
+        border: 1px solid #15042d;
+    }
+
+    .controllers {
+        height: 38px;
+    }
+}

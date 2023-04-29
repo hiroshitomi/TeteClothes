@@ -25,6 +25,17 @@
     color: #15042d;
 }
 
+.btn:hover {
+    color: var(--bs-btn-hover-color);
+    background-color: #dbc0ff !important;
+    border-color: #15042d !important;
+}
+
+:not(.btn-check)+.btn:active {
+    background-color: #dbc0ff !important;
+    border-color: #15042d !important;
+}
+
 @media (max-width: 576px) {
     .detail-container {
         display: flex;

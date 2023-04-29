@@ -17,6 +17,7 @@ const ItemCount = ({count, setCount}) => {
     <div className="counter">
       <div className="controllers">
         <Button
+          className="btn-count"
           disabled={count === 0}
           onClick={restar}
           style={{marginRight: "5px"}}
@@ -26,6 +27,7 @@ const ItemCount = ({count, setCount}) => {
         </Button>
         <span>{count}</span>
         <Button
+          className="btn-count"
           disabled={count === 0}
           onClick={onAdd}
           style={{marginLeft: "5px"}}

@@ -16,6 +16,7 @@ import Swal from "sweetalert2";
 import Form from "react-bootstrap/Form";
 import Modal from "react-bootstrap/Modal";
 
+
 const Cart = () => {
   const { cart, clear, removeItem, total } = useContext(CartContext);
 
@@ -117,7 +118,7 @@ const Cart = () => {
                     <img
                       alt={product.title}
                       src={`/images/${product.image}`}
-                      style={{ height: "50px", width: "50px" }}
+                      style={{ height: "60px", width: "50px", cursor: "pointer" }}
                       onClick={() => navigate(`/item/${product.id}`)}
                     />
                   </td>

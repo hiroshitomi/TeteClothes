@@ -1,14 +1,20 @@
 import { Link } from "react-router-dom";
 import "./style.css";
 import { Button } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
+
 
 const Item = ({ product }) => {
+  const navigate = useNavigate()
+
   return (
     <div className="item">
       <img
         alt={product.title}
         src={`/images/${product.image}`}
         width="175px"
+        onClick={() => navigate(`/item/${product.id}`)}
+        style={{cursor: "pointer"}}
       />
       <h2>{product.title}</h2>
       <h3>

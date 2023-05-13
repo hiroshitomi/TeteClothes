@@ -39,12 +39,12 @@ const Cart = () => {
     handleClose()
     createOrder()
   }
-
+    
   const createOrder = () => {
     //event.preventDefault();
     const db = getFirestore();
     const querySnapshot = collection(db, "orders");
-
+    
     addDoc(querySnapshot, {
       buyer: {
         email: formValue.email,
@@ -98,6 +98,7 @@ const Cart = () => {
 
   return (
     <div className="container">
+      
       <div className="cart">
         {cart?.length === 0 && <CartEmpty />}
         {cart?.length > 0 && (
@@ -253,5 +254,6 @@ const Cart = () => {
     </div>
   );
 };
+
 
 export default Cart;

@@ -151,42 +151,48 @@ const Cart = () => {
         )}
         {cart?.length > 0 && (
           <div
-            style={{ display: "flex", flexDirection: "row", color: "black" }}
+            style={{ display: "flex", flexDirection: "column", color: "black" }}
           >
-            <h2 className="text-center">Total:${total}</h2>
-            <Button
-              style={{
-                background: "#15042d",
-                border: "1px solid #15042d",
-                margin: "2px",
-              }}
-              onClick={clear}
-            >
-              Vaciar Carrito
-            </Button>
-            <Button
-              style={{
-                background: "#15042d",
-                border: "1px solid #15042d",
-                margin: "2px",
-              }}
-              onClick={() => navigate("/")}
-            >
-              Seguir comprando
-            </Button>
+            <div className="mb-4 d-flex justify-content-end align-items-center">
+              <h2 className="text-end text-black mx-1">TOTAL: ${total}</h2>
+              <Button
+                style={{
+                  background: "#15042d",
+                  border: "1px solid #15042d",
+                  margin: "2px",
+                }}
+                onClick={handleShow}
+              >
+                Finalizar Compra
+              </Button>
+              
+            </div>
+            
+            <div className="d-flex justify-content-end">
+              <Button
+                style={{
+                  background: "#15042d",
+                  border: "1px solid #15042d",
+                  margin: "2px",
+                }}
+                onClick={() => navigate("/")}
+              >
+                Seguir comprando
+              </Button>
 
-            <Button
-              style={{
-                background: "#15042d",
-                border: "1px solid #15042d",
-                margin: "2px",
-              }}
-              onClick={handleShow}
-            >
-              Finalizar Compra
-            </Button>
+              <Button
+                style={{
+                  background: "#15042d",
+                  border: "1px solid #15042d",
+                  margin: "2px",
+                }}
+                onClick={clear}
+              >
+                Vaciar Carrito
+              </Button>
+              
 
-            <Modal show={show} onHide={handleClose}>
+              <Modal show={show} onHide={handleClose}>
               <Modal.Header closeButton>
                 <Modal.Title>Finalizar Compra</Modal.Title>
               </Modal.Header>
@@ -204,6 +210,7 @@ const Cart = () => {
                       onChange={handleInput}
                       placeholder="Nombre completo"
                       autoFocus
+                      required={true}
                     />
                   </Form.Group>
                   <Form.Group
@@ -217,6 +224,7 @@ const Cart = () => {
                       onChange={handleInput}
                       type="text"
                       placeholder="Teléfono"
+                      required={true}
                     />
                   </Form.Group>
                   <Form.Group
@@ -228,8 +236,9 @@ const Cart = () => {
                       name="email"
                       value={formValue.email}
                       onChange={handleInput}
-                      type="text"
+                      type="email"
                       placeholder="mail@ejemplo.com"
+                      required={true}
                     />
                   </Form.Group>
                 </Form>
@@ -248,6 +257,10 @@ const Cart = () => {
                 </Button>
               </Modal.Footer>
             </Modal>
+            </div>
+            
+
+            
           </div>
         )}
       </div>

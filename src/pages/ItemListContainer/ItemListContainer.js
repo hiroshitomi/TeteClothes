@@ -9,10 +9,12 @@ import {
   query,
   where,
 } from "firebase/firestore";
+import HeartsLoader from "../../Components/HeartsLoader/HeartsLoader";
 
 const ItemListContainer = () => {
   const [productList, setProductList] = useState([]);
   const { categoryId } = useParams();
+  const [isLoading, setIsLoading] = useState(true)
 
   const getProducts = () => {
     const db = getFirestore();
@@ -28,6 +30,7 @@ const ItemListContainer = () => {
           return { id: doc.id, ...doc.data() };
         });
         setProductList(list);
+        setIsLoading(false);
       })
       .catch((error) => console.log(error));
   };
@@ -38,6 +41,7 @@ const ItemListContainer = () => {
 
   return (
     <div className="main">
+      {isLoading && <HeartsLoader/>}
       <ItemList productList={productList} />
     </div>
   );

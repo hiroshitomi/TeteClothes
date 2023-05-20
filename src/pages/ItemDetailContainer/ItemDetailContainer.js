@@ -37,7 +37,7 @@ const ItemDetailContainer = () => {
     else{
         return (
             <div className="main">
-                <ItemDetail detail={detailProduct}/>
+                <h1><ItemDetail detail={detailProduct}/></h1>
             </div>
         );
     }

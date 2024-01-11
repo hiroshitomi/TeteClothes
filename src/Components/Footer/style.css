@@ -1,12 +1,12 @@
-.footer-style {
-    width: 100%;
+/* .footer-style {
+    width: 8cqi;
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
     background-color: #15042d;
     align-items: center;
     
-}
+} */
 
 .main-footer {
     background-color: #15042d;
@@ -14,4 +14,5 @@
     position: relative;
     bottom: 0;
     width: 100%;
+    margin: auto;
 }

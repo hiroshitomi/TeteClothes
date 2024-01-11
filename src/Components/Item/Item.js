@@ -9,34 +9,23 @@ const Item = ({ product }) => {
 
     return (
       <div className="item">
-        <img
+        <img className="image-style"
           alt={product.title}
           src={`/images/${product.image}`}
-          width="175px"
+          width="250px"
           onClick={() => navigate(`/item/${product.id}`)}
           style={{cursor: "pointer"}}
         />
-        <h2>{product.title}</h2>
-        <h3>
-          <strong>$</strong>
-          {product.price}
-        </h3>
+        <div className="product-title">
+          <h6>{product.title}</h6>
+          <h6>
+            <strong>${product.price}</strong>
+          </h6>
+        </div>
         <Link to={`/item/${product.id}`}>
-          <Button
-            style={{
-              background: "#dbc0ff",
-              border: "1px solid #dbc0ff",
-              color: "#15042d",
-              margin: "2px",
-              "&:hover": {
-                background: "#15042d73",
-                border: "1px solid #15042d73",
-                color: "#dbc0ff",
-              },
-            }}
-          >
-            Ver mas
-          </Button>
+          <button className="button-card">
+            Ver más
+          </button>
         </Link>
       </div>
     );

@@ -1,9 +1,37 @@
 .item {
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.378);
     border-radius: 10px;
-    padding: 10px;
-    margin: 5px;
+    padding: 7px 8px;
+    margin: 1rem;
     background-color: #15042d;
-    height: 31rem;
-    width: 12rem;
+}
+
+.product-title {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 8px;
+}
+
+.image-style {
+    border-radius: 5px;
+    margin: 5px;
+}
+
+.button-card {
+    background: #dbc0ff;
+    color: #15042d;
+    border: 1px solid #dbc0ff;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    width: 80%;
+}
+
+.button-card:hover {
+    background: #dbc0ff8e;
+    border: 1px solid #dbc0ff8e;
+    color: #15042d;
+    transform: scale(1.1);
+    transition: all ease-in-out .3s;
 }
